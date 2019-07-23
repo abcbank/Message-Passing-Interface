@@ -9,7 +9,7 @@ int main(int argc, char **argv) {
    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
    MPI_Comm_size(MPI_COMM_WORLD, &p);
 
-   printf("Welcome to MPI world! %d out of %d processors.n", rank, p);
+   printf("Welcome to MPI world! %d out of %d processors\n", rank, p);
 
    MPI_Finalize();
    return 0;
