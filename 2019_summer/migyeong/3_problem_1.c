@@ -14,15 +14,15 @@ void main(int argc, char **argv){
 		sum+=i;
 	}
 
-	int i, irecv[100];
+	int irecv[100];
 	MPI_Send(&sum, 1, MPI_INTEGER, 0, rank, MPI_COMM_WORLD);
 
 	MPI_Status status;
 	if(rank==0){
-		for(i=0;i=rank;i++){
+		for(int i=0;i<size;i++){
 			MPI_Recv(irecv, 1, MPI_INTEGER, rank, rank, MPI_COMM_WORLD, &status);
 		}
-		for(i=0;i=rank;i++){
+		for(int i=0;i<size;i++){
 			printf("irecv[%d] = %d\n", i, irecv[i]);
 			result+=irecv[i];
 		}
